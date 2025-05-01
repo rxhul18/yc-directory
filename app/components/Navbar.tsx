@@ -5,7 +5,6 @@ import React from 'react'
 
 const Navbar = async () => {
     const session = await auth();
-    console.log(session)
 
     return (
         <div className='px-5 py-3 bg-white shadow-md font-work-sans'>
