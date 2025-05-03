@@ -391,6 +391,9 @@ layer(base);
   :root {
     --radius: 0.5rem;
   }
+  button{
+    @apply cursor-pointer
+  }
 }
 
 .w-md-editor-toolbar {
