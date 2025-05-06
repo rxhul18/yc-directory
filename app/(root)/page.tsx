@@ -9,7 +9,43 @@ export default async function Home({ searchParams }: {
   const posts = [{
     _createdAt: new Date(),
     views: 100,
-    author: { _id: 1 },
+    author: { _id: 1, name: "John Doe" },
+    _id: 1,
+    title: "Startup 1",
+    description: "Description of startup 1",
+    image: "https://i.imgur.com/zTtzvAu.png",
+    category: "Category 1"
+  },{
+    _createdAt: new Date(),
+    views: 100,
+    author: { _id: 1, name: "John Doe" },
+    _id: 1,
+    title: "Startup 1",
+    description: "Description of startup 1",
+    image: "https://i.imgur.com/zTtzvAu.png",
+    category: "Category 1"
+  },{
+    _createdAt: new Date(),
+    views: 100,
+    author: { _id: 1, name: "John Doe" },
+    _id: 1,
+    title: "Startup 1",
+    description: "Description of startup 1",
+    image: "https://i.imgur.com/zTtzvAu.png",
+    category: "Category 1"
+  },{
+    _createdAt: new Date(),
+    views: 100,
+    author: { _id: 1, name: "John Doe" },
+    _id: 1,
+    title: "Startup 1",
+    description: "Description of startup 1",
+    image: "https://i.imgur.com/zTtzvAu.png",
+    category: "Category 1"
+  },{
+    _createdAt: new Date(),
+    views: 100,
+    author: { _id: 1, name: "John Doe" },
     _id: 1,
     title: "Startup 1",
     description: "Description of startup 1",

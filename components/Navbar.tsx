@@ -5,6 +5,7 @@ import React from 'react'
 
 const Navbar = async () => {
     const session = await auth();
+    console.log(session,"session");
 
     return (
         <div className='px-5 py-3 bg-white shadow-md font-work-sans'>
@@ -20,7 +21,6 @@ const Navbar = async () => {
                             </Link>
                             <form action={async () => {
                                 "use server";
-
                                 await signOut({ redirectTo: "/" });
                             }}>
                                 <button type='submit' className='cursor-pointer'>Logout</button>
