@@ -1,57 +1,17 @@
-import StartupCard from "@/components/StartupCard";
+import StartupCard, { StartupTypeCard } from "@/components/StartupCard";
 import SearchForm from "../../components/SearchForm";
+import { STARTUPS_QUERY } from "@/sanity/lib/queries";
+import { sanityFetch, SanityLive } from "@/sanity/lib/live";
 
 export default async function Home({ searchParams }: {
   searchParams: Promise<{ query: string }>
 }) {
   const query = (await searchParams).query;
-
-  const posts = [{
-    _createdAt: new Date(),
-    views: 100,
-    author: { _id: 1, name: "John Doe" },
-    _id: 1,
-    title: "Startup 1",
-    description: "Description of startup 1",
-    image: "https://i.imgur.com/zTtzvAu.png",
-    category: "Category 1"
-  },{
-    _createdAt: new Date(),
-    views: 100,
-    author: { _id: 1, name: "John Doe" },
-    _id: 1,
-    title: "Startup 1",
-    description: "Description of startup 1",
-    image: "https://i.imgur.com/zTtzvAu.png",
-    category: "Category 1"
-  },{
-    _createdAt: new Date(),
-    views: 100,
-    author: { _id: 1, name: "John Doe" },
-    _id: 1,
-    title: "Startup 1",
-    description: "Description of startup 1",
-    image: "https://i.imgur.com/zTtzvAu.png",
-    category: "Category 1"
-  },{
-    _createdAt: new Date(),
-    views: 100,
-    author: { _id: 1, name: "John Doe" },
-    _id: 1,
-    title: "Startup 1",
-    description: "Description of startup 1",
-    image: "https://i.imgur.com/zTtzvAu.png",
-    category: "Category 1"
-  },{
-    _createdAt: new Date(),
-    views: 100,
-    author: { _id: 1, name: "John Doe" },
-    _id: 1,
-    title: "Startup 1",
-    description: "Description of startup 1",
-    image: "https://i.imgur.com/zTtzvAu.png",
-    category: "Category 1"
-  }]
+  const params  = { search: query || null}
+  const { data: posts} = await sanityFetch({
+    query: STARTUPS_QUERY,
+    params: params
+  })
 
   return (
     <>
@@ -66,7 +26,7 @@ export default async function Home({ searchParams }: {
         </p>
         <ul className="mt-7 card_grid">
           {posts.length > 0 ? (
-            posts.map((post) => (
+            posts.map((post: StartupTypeCard) => (
               <StartupCard key={post._id} post={post} />
             ))
           ) :
@@ -75,6 +35,7 @@ export default async function Home({ searchParams }: {
             )}
         </ul>
       </section>
+      <SanityLive />
     </>
   );
 }
