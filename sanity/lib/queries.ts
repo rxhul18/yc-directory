@@ -32,7 +32,7 @@ export const STARTUP_BY_ID_QUERY =
 }`);
 
 export const STARTUP_VIEWS_QUERY =
-  defineQuery(`*[_typea == "startup" && _id == $id][0]{
+  defineQuery(`*[_type == "startup" && _id == $id][0]{
     _id, views
 }`);
 
@@ -42,7 +42,8 @@ export const AUTHOR_BY_GITHUB_ID_QUERY = defineQuery(`
     id,
     name,
     username,
+    email,
     image,
-    bio,
-    email
+    bio
+}
 `);
