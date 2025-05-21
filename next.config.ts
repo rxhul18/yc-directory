@@ -1,23 +1,23 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  images:{
+  images: {
     dangerouslyAllowSVG: true,
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: '*',
+        protocol: "https",
+        hostname: "*",
       },
-    ]
+    ],
   },
-  experimental:{
-    ppr: 'incremental',
+  experimental: {
+    ppr: "incremental",
   },
-  devIndicators:{
+  devIndicators: {
     appIsrStatus: true,
     buildActivity: true,
-    buildActivityPosition: 'bottom-right',
-  }
+    buildActivityPosition: "bottom-right",
+  },
 };
 
 export default nextConfig;
