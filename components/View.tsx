@@ -9,7 +9,6 @@ const View = async ({ id }: { id: string }) => {
     const data = await client
         .withConfig({ useCdn: false })
         .fetch(STARTUP_VIEWS_QUERY, { id });
-    console.log(data)
 
     const totalViews = data?.views ?? 0;
 

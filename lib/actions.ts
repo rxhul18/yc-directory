@@ -42,7 +42,6 @@ export const createPitch = async (state:any, form:FormData, pitch:string) => {
             status: "SUCCESS",
         })
     } catch (error) {
-        console.log(error)
         return parseServerActionResponse({error: JSON.stringify(error), status: "ERROR"})
     }
 }
